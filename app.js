@@ -1,35 +1,37 @@
+require('dotenv').config()
 var express = require("express");
+const https = require('https');
 var bodyParser = require("body-parser");
 var SpotifyWebApi = require('spotify-web-api-node');
 const app = express();
 app.set('view engine', 'ejs');
 
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 app.use(express.static("public"));
 
-
-var clientId = '8e673483a1d3493b9926f6f8ee3ab1c5',
-  clientSecret = 'c64a9a52a32b47d49e5eb1bb8cabe80c';
-
-// Create the api object with the credentials
+// Set necessary parts of the credentials on the constructor
 var spotifyApi = new SpotifyWebApi({
-  clientId: clientId,
-  clientSecret: clientSecret
+  clientId: process.env.CLIENTID,
+  clientSecret:process.env.CLIENTSECRET
+
 });
-
-// Retrieve an access token.
-spotifyApi.clientCredentialsGrant().then(
+  console.log(process.env.CLIENTID);
+spotifyApi.setAccessToken('BQAc_CWjPEI5ElDFiUNmCl7JQMqUuZJrHVrH__xUBh23LPsNF0_RlFvPotxH0QgWFEv_toWqoc1cfskgd8q74qZi4zSYBkoDD6r_xK_cQ_s8EE1Dix-3JDpAzg0JlYzvwW28LJroEVRJUmnKQA3vYM-3sOnIhnq450E0Vv9_qpVY9sc');
+spotifyApi.getArtistAlbums('1HY2Jd0NmPuamShAr6KMms').then(
   function(data) {
-  //  console.log('The access token is ' + data.body['access_token']);
-    access_token=data.body['access_token'];
-
-
-
-    spotifyApi.setAccessToken(data.body['access_token']);
+    console.log('Artist albums', data.body);
   },
   function(err) {
-    console.log('Something went wrong!', err);
+    console.error(err);
   }
 );
+let port = 3000;
 
-console.log(access_token);
+
+
+
+app.listen(port, function() {
+  console.log("Server started on port!");
+});
