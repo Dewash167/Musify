@@ -1,0 +1,148 @@
+<%- include('partials/header') %>
+
+
+<div class="container mt-5">
+  <h1>Search Albums</h1>
+
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="card">
+        <div class="card-body">
+
+          <!-- Makes POST request to /login route -->
+          <form action="/albums" method="POST">
+            <div class="form-group">
+              <label for="albums">Enter Albums Id</label>
+              <input type="email" class="form-control" name="albums">
+            </div>
+
+            <button type="submit" class="btn btn-dark">Search</button>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="col-sm-4">
+      <div class="card">
+
+          <a class="btn btn-block btn-social btn-google" href="/auth/google" role="button">
+            <i class="fab fa-google"></i>
+            Sign In with Google
+          </a>
+
+      </div>
+    </div> -->
+
+  </div>
+</div>
+<div class="container mt-5">
+  <h1>Search for playlists</h1>
+
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="card">
+        <div class="card-body">
+
+          <!-- Makes POST request to /login route -->
+          <form action="/playlist" method="POST">
+            <div class="form-group">
+              <label for="playlist">Enter playlist id</label>
+              <input type="text" class="form-control" name="playlist">
+            </div>
+
+            <button type="submit" class="btn btn-dark">Search Playlists</button>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="col-sm-4">
+      <div class="card">
+
+          <a class="btn btn-block btn-social btn-google" href="/auth/google" role="button">
+            <i class="fab fa-google"></i>
+            Sign In with Google
+          </a>
+
+      </div>
+    </div> -->
+
+  </div>
+</div>
+<div class="container mt-5">
+  <h1>Get an Artist</h1>
+
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="card">
+        <div class="card-body">
+
+          <!-- Makes POST request to /login route -->
+          <form action="/artist" method="POST">
+            <div class="form-group">
+              <label for="artist">Enter the Artist's ID</label>
+              <input type="text" class="form-control" name="artist">
+            </div>
+
+            <button type="submit" class="btn btn-dark">VIEW</button>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="col-sm-4">
+      <div class="card">
+
+          <a class="btn btn-block btn-social btn-google" href="/auth/google" role="button">
+            <i class="fab fa-google"></i>
+            Sign In with Google
+          </a>
+
+      </div>
+    </div> -->
+
+  </div>
+</div>
+<div class="container mt-5">
+  <h1>Search Tracks</h1>
+
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="card">
+        <div class="card-body">
+
+          <!-- Makes POST request to /login route -->
+          <form action="/tracks" method="POST">
+            <div class="form-group">
+              <label for="track">Enter track ID</label>
+              <input type="text" class="form-control" name="track">
+            </div>
+
+            <button type="submit" class="btn btn-dark">search</button>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="col-sm-4">
+      <div class="card">
+
+          <a class="btn btn-block btn-social btn-google" href="/auth/google" role="button">
+            <i class="fab fa-google"></i>
+            Sign In with Google
+          </a>
+
+      </div>
+    </div> -->
+
+  </div>
+</div>
+<%- include('partials/footer'); -%>
