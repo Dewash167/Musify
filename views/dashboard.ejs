@@ -1,5 +1,45 @@
 <%- include('partials/header') %>
+<a href="/playersettings"><button type="button" name="button"> Change Players Settings</button></a>
+<div class="container mt-5">
+  <h1>Search</h1>
 
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="card">
+        <div class="card-body">
+
+          <!-- Makes POST request to /login route -->
+          <form action="/search" method="POST">
+            <div class="form-group">
+              <label for="query">Query</label>
+              <input type="text" class="form-control" name="query">
+            </div>
+            <div class="form-group">
+              <label for="type">Type</label>
+              <input type="text" class="form-control" name="type">
+            </div>
+
+            <button type="submit" class="btn btn-dark">Search</button>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="col-sm-4">
+      <div class="card">
+
+          <a class="btn btn-block btn-social btn-google" href="/auth/google" role="button">
+            <i class="fab fa-google"></i>
+            Sign In with Google
+          </a>
+
+      </div>
+    </div> -->
+
+  </div>
+</div>
 
 <div class="container mt-5">
   <h1>Search Albums</h1>
@@ -13,7 +53,7 @@
           <form action="/albums" method="POST">
             <div class="form-group">
               <label for="albums">Enter Albums Id</label>
-              <input type="email" class="form-control" name="albums">
+              <input type="text" class="form-control" name="albums">
             </div>
 
             <button type="submit" class="btn btn-dark">Search</button>
