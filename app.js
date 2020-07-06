@@ -16,7 +16,7 @@ var authOptions = {
     grant_type: 'client_credentials'
   },
   json: true,
-  scope: 'user-read-recently-played'
+
 };
 
 
@@ -83,7 +83,7 @@ app.post("/playlist", function(req, res) {
 
       // use the access token to access the Spotify Web API
       var token = body.access_token;
-      console.log(body);
+    //  console.log(body);
       var options = {
         url: 'https://api.spotify.com/v1/playlists/' + playlist_id,
 
@@ -721,13 +721,7 @@ app.post("/search", function(req, res) {
 
 
 
-let port = process.env.PORT;
-if (port == null || port == "") {
-  port = 3000;
-}
 
-
-
-app.listen(port, function() {
+app.listen( process.env.PORT||3000, function() {
   console.log("Server started on port 3000!");
 });
